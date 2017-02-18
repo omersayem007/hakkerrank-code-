@@ -1,17 +1,19 @@
-function grid( iteams,number )
+function grid( items,number )
 {
   
   for(var i=0 ;i<5;i++)
     {
-      for(j=1;j<5;j++)
+      for( var j=1;j<5;j++)
         {
-    while(items[i][j].toString().charCodeAt() < items[i][j-1].toString().charCodeAt())
+ 
+    while( j>0 && items[i][j].toString().charCodeAt() < items[i][j-1].toString().charCodeAt()  )
       {
         var temp =items[i][j];
         items[i][j]=items[i][j-1];
         items[i][j-1]=temp ;
         
-        j--;
+      j=j-1;
+    
       }
         
         }
