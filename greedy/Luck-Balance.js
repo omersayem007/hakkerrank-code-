@@ -1,8 +1,6 @@
-function luck_balance()
+function luck_balance(obj)
 {
-  
-  
-  
+  return obj ;
 }
 
 function data(luck,importance)
@@ -11,9 +9,10 @@ function data(luck,importance)
   this.importance=importance;
 }
 
-var obj={
+var obj=[
   
-  new object(5,1),
-}
+  new data(5,1),
+  new data(1,2)
+];
 
-console.log(luck_balance(   ))
+console.log(luck_balance( obj ));
