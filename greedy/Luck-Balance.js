@@ -1,3 +1,5 @@
+// https://www.hackerrank.com/challenges/luck-balance
+
 function luck_balance(obj , imp)
 {
   var temp=0;
