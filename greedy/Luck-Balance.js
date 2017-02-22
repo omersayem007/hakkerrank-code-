@@ -11,7 +11,7 @@ function luck_balance(obj , imp)
       return temp ;
       }
   else
- var sum =0 ;
+ 
  
   obj.sort(function(a,b)
 {
@@ -20,15 +20,35 @@ function luck_balance(obj , imp)
  
 });
 
+  var sum =0 ;
+ var sum1 =0 ;
+ var sum2 =0;
+
    for(var j=0;j<obj.length ;j++)
    {
-if( obj[j].importance === 1)
+      if( obj[j].importance === 1)
+        {
+          sum++;
+        } 
+   }
+  
+  for( var k =0 ;k<sum-imp ;k++)
 {
-  sum++;
-}
+  if(obj[k].importance === 1 )
+  {
+    sum1+=obj[k].luck;
+    delete obj[k];
+  
   }
+}
 
-return obj;
+for(var l=sum-imp; l<obj.length ; l++)
+{
+  sum2+=obj[l].luck ;
+}
+
+
+return sum2-sum1 ;
 
 }
 
@@ -50,4 +70,4 @@ var obj=[
 ];
  
 
-console.log( luck_balance(obj,3) );
+console.log( luck_balance(obj,2) );
